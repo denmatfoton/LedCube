@@ -1,11 +1,13 @@
 # Led Cube 8x8x8
 
+Led Cube is built of 512 LEDs. It is based on Atmega16 and has USB interface for connection to a PC. Connection is done though FT232R micro chip.
 
+![Cube outside view](files/cube_outside.jpg?raw=true "Cube outside")
+![Cube inside view](files/cube_inside.jpg?raw=true "Cube inside")
+[![Cube demonstration](https://img.youtube.com/vi/Hagad9muHUU/0.jpg)](https://www.youtube.com/watch?v=Hagad9muHUU)
 
+## Firmware
+The firmware contains a screen saver function. It is displayed, when there is no connection established with the management program. The firmware is built using WinAVR compiler.
 
-Nowdays there are a lot of devices remotely controlled thrue 433MHz frecuency. If we decide to do some automation and manage such devices using a single board computer like Raspberry Pi we may figure out a problem, that there are a lot of ASK protocols for this frecuency.
-These tools use algorithm, which should recognize the most of protocols.
-
-More about how to connect 433MHz modules to Raspberry Pi and the stucture of the signal you may read [here](http://www.instructables.com/id/Super-Simple-Raspberry-Pi-433MHz-Home-Automation/).
-
-The idea of the algorithm is to record timings between the highs and lows and after some periodes of time analyse the data. Data analyser tries to find sequence of timings, which is similar to some RC signal (sequence of timings with alternative 2 different durations). If signal was detected, it tries to parse it. Then recorded signal may be written to a binary file to be able to reproduce it.
+##Management program
+Management program is also called VoxelEditor. It is a Windows program. VoxelEditor includes libraries ftd2xx.lib for connection with FT232R, OpenGL for displaying voxels and bass.lib for playing music. Voxel is analog of pixel, but in volume. Voxel map is stored in the VoxelEditor. It is displayed on the PC using OpenGL. Simultaniously it is converted to the cube state and cube state is transmitted to the cube. Voxel map may be edited, saved to file or loaded from file.

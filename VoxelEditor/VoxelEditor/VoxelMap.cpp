@@ -143,14 +143,16 @@ void VoxelMap::saveToFile(char* fileName) {
 		fileName[++l] = '\0';
 	}
 
-	if(!(fp = fopen(fileName, "wb")))
+	if (fopen_s(&fp, fileName, "wb"))
 		return;
+
     WaitForSingleObject(mutex, INFINITE);
 	for (vector<VoxelPoint>::iterator it = map.begin(); it != map.end(); it++) {
 		fwrite(&(*it), sizeof(VoxelPoint), 1, fp);
 	}
     ReleaseMutex(mutex);
-	fclose(fp);
+	
+    fclose(fp);
 }
 
 void VoxelMap::readFromFile(const char* fileName) {
@@ -162,7 +164,7 @@ void VoxelMap::readFromFile(const char* fileName) {
         && (fileName[l - 1] == 'm')))
 		return;
 
-	if(fopen_s(&fp, fileName, "rb"))
+	if (fopen_s(&fp, fileName, "rb"))
 		return;
 	
     WaitForSingleObject(mutex, INFINITE);

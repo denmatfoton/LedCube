@@ -1,4 +1,7 @@
-# Tools for Raspberry Pi to record/send ASK RF codes
+# Led Cube 8x8x8
+
+
+
 
 Nowdays there are a lot of devices remotely controlled thrue 433MHz frecuency. If we decide to do some automation and manage such devices using a single board computer like Raspberry Pi we may figure out a problem, that there are a lot of ASK protocols for this frecuency.
 These tools use algorithm, which should recognize the most of protocols.

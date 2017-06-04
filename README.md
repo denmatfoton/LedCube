@@ -9,5 +9,5 @@ Led Cube is built of 512 LEDs. It is based on Atmega16 and has USB interface for
 ## Firmware
 The firmware contains a screen saver function. It is displayed, when there is no connection established with the management program. The firmware is built using WinAVR compiler.
 
-##Management program
+## Management program
 Management program is also called VoxelEditor. It is a Windows program. VoxelEditor includes libraries ftd2xx.lib for connection with FT232R, OpenGL for displaying voxels and bass.lib for playing music. Voxel is analog of pixel, but in volume. Voxel map is stored in the VoxelEditor. It is displayed on the PC using OpenGL. Simultaniously it is converted to the cube state and cube state is transmitted to the cube. Voxel map may be edited, saved to file or loaded from file.
